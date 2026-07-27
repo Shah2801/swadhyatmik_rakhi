@@ -59,19 +59,19 @@
 
         </div>
 
-        <nav>
+    <nav class="navbar">
+         <div class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+        </div>
 
-            <ul>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#collection">Collection</a></li>
+        <li><a href="#footer">Contact</a></li>
+    </ul>
 
-                <li><a href="#">Home</a></li>
-
-                <li><a href="#collection">Collection</a></li>
-
-                <li><a href="#footer">Contact</a></li>
-
-            </ul>
-
-        </nav>
+    
+    </nav>
 
     </header>
 
@@ -154,95 +154,114 @@
 
     <!-- ================= PRODUCTS ================= -->
 
-    <section class="products" id="collection">
+    
 
-        <h2>Our Rakhi Collection</h2>
 
-        <p class="sub-title">
+<section class="products" id="collection">
 
-            Choose your favourite Rakhi and order instantly through WhatsApp.
+    <h2>Our Rakhi Collection</h2>
 
-        </p>
+    <p class="sub-title">
+        Choose your favourite Rakhi to view it in full size and place your order.
+    </p>
 
-        <div class="product-grid">
+    <div class="product-grid">
 
-            <!-- Card 1 -->
-
-            <div class="card">
-
-                <div class="badge">Best Seller</div>
-
-                <img src="images/rakhi1.jpg" alt="Rakhi">
-
-                <div class="card-body">
-
-                    <h3>Designer Rakhi</h3>
-
-                    <h4>₹199</h4>
-
-                    <button class="order-btn"
-                        data-rakhi="Designer Rakhi"
-                        data-price="₹199">
-
-                        Order Now
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- Card 2 -->
-
-            <div class="card">
-
-                <img src="images/rakhi2.jpg" alt="Rakhi">
-
-                <div class="card-body">
-
-                    <h3>Golden Rakhi</h3>
-
-                    <h4>₹249</h4>
-
-                    <button class="order-btn"
-                        data-rakhi="Golden Rakhi"
-                        data-price="₹249">
-
-                        Order Now
-
-                    </button>
-
-                </div>
-
-            </div>
-
-            <!-- Card 3 -->
-
-            <div class="card">
-
-                <img src="images/rakhi3.jpg" alt="Rakhi">
-
-                <div class="card-body">
-
-                    <h3>Pearl Rakhi</h3>
-
-                    <h4>₹299</h4>
-
-                    <button class="order-btn"
-                        data-rakhi="Pearl Rakhi"
-                        data-price="₹299">
-
-                        Order Now
-
-                    </button>
-
-                </div>
-
-            </div>
+        <!-- Rakhi 1 -->
+        <div class="card">
+          <div class="badge">Best Seller</div>
+            <img
+                src="images/rakhi3.jpg"
+                class="product-img"
+                data-id="RK001"
+                alt="Rakhi">
 
         </div>
 
-    </section>
+        <!-- Rakhi 2 -->
+        <div class="card">
+
+            <img
+                src="images/rakhi2.jpg"
+                class="product-img"
+                data-id="RK002"
+                alt="Rakhi">
+
+        </div>
+
+        <!-- Rakhi 3 -->
+        <div class="card">
+
+            <img
+                src="images/rakhi1.jpg"
+                class="product-img"
+                data-id="RK003"
+                alt="Rakhi">
+
+        </div>
+
+
+        <!-- Rakhi 4 -->
+        <div class="card">
+          
+            <img
+                src="images/rakhi4.jpg"
+                class="product-img"
+                data-id="RK001"
+                alt="Rakhi">
+
+        </div>
+
+        <!-- Rakhi 5 -->
+        <div class="card">
+
+            <img
+                src="images/rakhi6.jpg"
+                class="product-img"
+                data-id="RK002"
+                alt="Rakhi">
+
+        </div>
+
+        <!-- Rakhi 6 -->
+        <div class="card">
+
+            <img
+                src="images/rakhi8.jpg"
+                class="product-img"
+                data-id="RK003"
+                alt="Rakhi">
+
+        </div>
+
+
+        <!-- Rakhi 7 -->
+        <div class="card">
+          
+            <img
+                src="images/rakhi5.jpg"
+                class="product-img"
+                data-id="RK001"
+                alt="Rakhi">
+
+        </div>
+
+        <!-- Rakhi 8 -->
+        <div class="card">
+
+            <img
+                src="images/rakhi7.jpg"
+                class="product-img"
+                data-id="RK002"
+                alt="Rakhi">
+
+        </div>
+
+    </div>
+
+</section>
+
+
 
     <!-- ================= ORDER POPUP ================= -->
 
@@ -274,14 +293,14 @@
                     required></textarea>
 
                 <input
-                    type="text"
-                    id="rakhiName"
-                    readonly>
-
+                    type="hidden"
+                    id="rakhiID">
                 <input
-                    type="text"
-                    id="rakhiPrice"
-                    readonly>
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1">
+                
 
                 <button type="submit">
 
@@ -341,6 +360,35 @@
 
     <script src="script.js"></script>
 
+
+
+<!-- Image Viewer -->
+
+<div class="image-popup" id="imagePopup">
+
+    <div class="image-box">
+
+        <span class="close-image">&times;</span>
+
+        <img
+            id="popupImage">
+
+        <button
+            id="popupOrderBtn"
+            class="hero-btn">
+
+            Order This Rakhi
+
+        </button>
+
+    </div>
+
+</div>  
+
+
 </body>
 
 </html>
+
+
+
