@@ -1,20 +1,18 @@
-// =============================
-// SELECT ELEMENTS
-// =============================
+// ==========================================
+// ELEMENTS
+// ==========================================
 
 const popup = document.getElementById("popup");
 const closeBtn = document.querySelector(".close");
-
 const orderButtons = document.querySelectorAll(".order-btn");
+const orderForm = document.getElementById("orderForm");
 
 const rakhiName = document.getElementById("rakhiName");
 const rakhiPrice = document.getElementById("rakhiPrice");
 
-const orderForm = document.getElementById("orderForm");
-
-// =============================
+// ==========================================
 // OPEN POPUP
-// =============================
+// ==========================================
 
 orderButtons.forEach(button => {
 
@@ -29,9 +27,9 @@ orderButtons.forEach(button => {
 
 });
 
-// =============================
+// ==========================================
 // CLOSE POPUP
-// =============================
+// ==========================================
 
 closeBtn.addEventListener("click", () => {
 
@@ -49,51 +47,119 @@ window.addEventListener("click", (e) => {
 
 });
 
-// =============================
+// ==========================================
 // WHATSAPP ORDER
-// =============================
+// ==========================================
 
 orderForm.addEventListener("submit", function(e){
 
     e.preventDefault();
 
-    const customerName = document.getElementById("customerName").value.trim();
+    const name = document.getElementById("customerName").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const address = document.getElementById("address").value.trim();
 
-    if(customerName === "" || phone === "" || address === ""){
+    if(name === "" || phone === "" || address === ""){
 
-        alert("Please fill all details.");
+        alert("Please fill all the details.");
 
         return;
+
     }
 
-    // Replace this number with your WhatsApp number
-    const ownerNumber = "919876543210";
+    // Your WhatsApp Number
+    const ownerNumber = "916203143986";
 
     const message =
-`🌸 *New Rakhi Order* 🌸
+`🌸 *New Rakhi Order*
 
-👤 Name: ${customerName}
+👤 Name : ${name}
 
-📱 Mobile: ${phone}
+📞 Mobile : ${phone}
 
-🏠 Address:
+🏠 Address :
 ${address}
 
-🎁 Rakhi: ${rakhiName.value}
+🎁 Rakhi : ${rakhiName.value}
 
-💰 Price: ${rakhiPrice.value}
+💰 Price : ${rakhiPrice.value}
 
-Please confirm this order.`;
+Please confirm my order. Thank you.`;
 
     const whatsappURL =
 `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
 
-    window.open(whatsappURL, "_blank");
+    window.open(whatsappURL,"_blank");
+
+    orderForm.reset();
 
     popup.style.display = "none";
 
-    orderForm.reset();
+});
+
+// ==========================================
+// SMOOTH NAVIGATION
+// ==========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute("href"))
+            .scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+    });
+
+});
+
+// ==========================================
+// HERO FADE ANIMATION
+// ==========================================
+
+window.addEventListener("load", ()=>{
+
+    document.querySelector(".hero-content").style.opacity="1";
+
+});
+
+// ==========================================
+// CARD SCROLL ANIMATION
+// ==========================================
+
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity="1";
+
+            entry.target.style.transform="translateY(0)";
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+cards.forEach(card=>{
+
+    card.style.opacity="0";
+
+    card.style.transform="translateY(40px)";
+
+    card.style.transition=".7s";
+
+    observer.observe(card);
 
 });

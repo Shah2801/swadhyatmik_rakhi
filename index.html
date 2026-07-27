@@ -1,183 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shree Rakhi Collection</title>
+    <title>SWADHYATMIK Rakhi</title>
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
-    <!-- Top Contact Bar -->
+    <!-- ================= TOP BAR ================= -->
+
     <div class="top-bar">
-        <div class="contact-info">
-            <span><i class="fa-solid fa-phone"></i> +91 9876543210</span>
-            <span><i class="fa-solid fa-location-dot"></i> Ranchi, Jharkhand</span>
+
+        <div class="top-content">
+
+            <div>
+                <i class="fa-solid fa-phone"></i>
+                +91 6203143986
+            </div>
+
+            <div>
+                <i class="fa-solid fa-truck-fast"></i>
+                Secure Packaging
+            </div>
+
         </div>
+
     </div>
 
-    <!-- Header -->
+    <!-- ================= HEADER ================= -->
+
     <header>
 
         <div class="logo">
-            🌸 SWADHYATMIK Rakhi
+
+            <img src="images/lotus-logo.webp" alt="Lotus Logo">
+
+            <div>
+
+                <h2>SWADHYATMIK</h2>
+
+                <span>Rakhi Collection</span>
+
+            </div>
+
         </div>
 
         <nav>
+
             <ul>
+
                 <li><a href="#">Home</a></li>
-                <li><a href="#products">Rakhis</a></li>
+
+                <li><a href="#collection">Collection</a></li>
+
                 <li><a href="#footer">Contact</a></li>
+
             </ul>
+
         </nav>
 
     </header>
 
-    <!-- Hero Section -->
+    <!-- ================= HERO ================= -->
+
     <section class="hero">
+
+        <div class="overlay"></div>
 
         <div class="hero-content">
 
-            <h1>Celebrate Raksha Bandhan with Love ❤️</h1>
+            <span class="welcome">
+
+                Celebrate the Bond of Love ❤️
+
+            </span>
+
+            <h1>
+
+                SWADHYATMIK
+
+                <br>
+
+                Rakhi Collection
+
+            </h1>
 
             <p>
-                Beautiful Handmade Rakhis at Affordable Prices.
-                Order directly through WhatsApp in just one click.
+
+                Elegant Designer Rakhis crafted with love, tradition and blessings
+                to make every Raksha Bandhan memorable.
+
             </p>
 
-            <a href="#products" class="shop-btn">
-                Shop Now
+            <a href="#collection" class="hero-btn">
+
+                Explore Collection
+
             </a>
 
         </div>
 
     </section>
 
-    <!-- Products -->
-    <section id="products" class="products">
+    <!-- ================= FEATURES ================= -->
+
+    <section class="features">
+
+        <div class="feature">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <h3>Unique Designs</h3>
+
+            <p>Beautiful handcrafted style rakhis for every relation.</p>
+
+        </div>
+
+        <div class="feature">
+
+            <i class="fa-solid fa-medal"></i>
+
+            <h3>Premium Quality</h3>
+
+            <p>Made using high quality decorative materials.</p>
+
+        </div>
+
+        <div class="feature">
+
+    <i class="fa-solid fa-box"></i>
+
+    <h3>Secure Packaging</h3>
+
+    <p>Your Rakhi is packed with care to ensure it reaches safely and beautifully.</p>
+
+</div>
+
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="products" id="collection">
 
         <h2>Our Rakhi Collection</h2>
 
-        <div class="product-container">
+        <p class="sub-title">
 
-                        <!-- Card 1 -->
+            Choose your favourite Rakhi and order instantly through WhatsApp.
+
+        </p>
+
+        <div class="product-grid">
+
+            <!-- Card 1 -->
+
             <div class="card">
-                <img src="images/rakhi1.jpg" alt="Designer Rakhi">
-                <div class="card-content">
-                    <h3>Designer Rakhi</h3>
-                    <p class="price">₹199</p>
 
-                    <button
-                        class="order-btn"
+                <div class="badge">Best Seller</div>
+
+                <img src="images/rakhi1.jpg" alt="Rakhi">
+
+                <div class="card-body">
+
+                    <h3>Designer Rakhi</h3>
+
+                    <h4>₹199</h4>
+
+                    <button class="order-btn"
                         data-rakhi="Designer Rakhi"
                         data-price="₹199">
+
                         Order Now
+
                     </button>
+
                 </div>
+
             </div>
 
             <!-- Card 2 -->
-            <div class="card">
-                <img src="images/rakhi2.jpg" alt="Golden Rakhi">
-                <div class="card-content">
-                    <h3>Golden Rakhi</h3>
-                    <p class="price">₹249</p>
 
-                    <button
-                        class="order-btn"
+            <div class="card">
+
+                <img src="images/rakhi2.jpg" alt="Rakhi">
+
+                <div class="card-body">
+
+                    <h3>Golden Rakhi</h3>
+
+                    <h4>₹249</h4>
+
+                    <button class="order-btn"
                         data-rakhi="Golden Rakhi"
                         data-price="₹249">
+
                         Order Now
+
                     </button>
+
                 </div>
+
             </div>
 
             <!-- Card 3 -->
+
             <div class="card">
-                <img src="images/rakhi3.jpg" alt="Traditional Rakhi">
-                <div class="card-content">
-                    <h3>Traditional Rakhi</h3>
-                    <p class="price">₹149</p>
 
-                    <button
-                        class="order-btn"
-                        data-rakhi="Traditional Rakhi"
-                        data-price="₹149">
-                        Order Now
-                    </button>
-                </div>
-            </div>
+                <img src="images/rakhi3.jpg" alt="Rakhi">
 
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="images/rakhi4.jpg" alt="Kids Rakhi">
-                <div class="card-content">
-                    <h3>Kids Rakhi</h3>
-                    <p class="price">₹99</p>
+                <div class="card-body">
 
-                    <button
-                        class="order-btn"
-                        data-rakhi="Kids Rakhi"
-                        data-price="₹99">
-                        Order Now
-                    </button>
-                </div>
-            </div>
-
-            <!-- Card 5 -->
-            <div class="card">
-                <img src="images/rakhi5.jpg" alt="Pearl Rakhi">
-                <div class="card-content">
                     <h3>Pearl Rakhi</h3>
-                    <p class="price">₹299</p>
 
-                    <button
-                        class="order-btn"
+                    <h4>₹299</h4>
+
+                    <button class="order-btn"
                         data-rakhi="Pearl Rakhi"
                         data-price="₹299">
-                        Order Now
-                    </button>
-                </div>
-            </div>
 
-            <!-- Card 6 -->
-            <div class="card">
-                <img src="images/rakhi6.jpg" alt="Premium Rakhi">
-                <div class="card-content">
-                    <h3>Premium Rakhi</h3>
-                    <p class="price">₹399</p>
-
-                    <button
-                        class="order-btn"
-                        data-rakhi="Premium Rakhi"
-                        data-price="₹399">
                         Order Now
+
                     </button>
+
                 </div>
+
             </div>
 
         </div>
+
     </section>
 
-
-        <!-- Order Popup -->
+    <!-- ================= ORDER POPUP ================= -->
 
     <div class="popup" id="popup">
 
-        <div class="popup-content">
+        <div class="popup-box">
 
             <span class="close">&times;</span>
 
-            <h2>Order Rakhi</h2>
+            <h2>Place Your Order</h2>
 
             <form id="orderForm">
 
@@ -196,7 +271,6 @@
                 <textarea
                     id="address"
                     placeholder="Delivery Address"
-                    rows="4"
                     required></textarea>
 
                 <input
@@ -210,7 +284,9 @@
                     readonly>
 
                 <button type="submit">
+
                     Order on WhatsApp
+
                 </button>
 
             </form>
@@ -219,27 +295,52 @@
 
     </div>
 
+    <!-- Floating WhatsApp -->
+
+    <a href="https://wa.me/916203143986"
+
+        class="whatsapp"
+
+        target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+    <!-- ================= FOOTER ================= -->
+
     <footer id="footer">
 
-    <h2>Shree Rakhi Collection</h2>
+        <img src="images/lotus-logo.webp" alt="Lotus">
 
-    <p>
-        <i class="fa-solid fa-phone"></i>
-        +91 9876543210
-    </p>
+        <h2>SWADHYATMIK Rakhi</h2>
 
-    <p>
-        <i class="fa-solid fa-location-dot"></i>
-        Ranchi, Jharkhand
-    </p>
+        <p>
 
-    <p>
-        © 2026 Shree Rakhi Collection. All Rights Reserved.
-    </p>
+            <i class="fa-solid fa-phone"></i>
 
-</footer>
+            +91 6203143986
 
-<script src="script.js"></script>
+        </p>
+
+        <p>
+
+            <i class="fa-solid fa-location-dot"></i>
+
+            Ranchi, Jharkhand
+
+        </p>
+
+        <p>
+
+            Made with ❤️ for Raksha Bandhan
+
+        </p>
+
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
+
 </html>
