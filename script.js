@@ -1,158 +1,92 @@
-// ==========================================
-// ELEMENTS
-// ==========================================
+// ==============================
+// SWADHYATMIK - script.js
+// ==============================
 
-const popup = document.getElementById("popup");
-const closeBtn = document.querySelector(".close");
-const orderForm = document.getElementById("orderForm");
+// ------------------------------
+// Mobile Menu
+// ------------------------------
 
-const imagePopup = document.getElementById("imagePopup");
-const popupImage = document.getElementById("popupImage");
-const popupOrderBtn = document.getElementById("popupOrderBtn");
-const closeImage = document.querySelector(".close-image");
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
 
-const rakhiID = document.getElementById("rakhiID");
-const rakhiName = document.getElementById("rakhiName");
-const rakhiPrice = document.getElementById("rakhiPrice");
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
 
-const popupName = document.getElementById("popupName");
-const popupPrice = document.getElementById("popupPrice");
+document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
 
-const quantityInput = document.getElementById("quantity");
+document.addEventListener("click", (e) => {
 
-// ==========================================
-// IMAGE PREVIEW
-// ==========================================
+    if (
+        !navLinks.contains(e.target) &&
+        !menuToggle.contains(e.target)
+    ) {
 
-document.querySelectorAll(".product-img").forEach(img => {
+        navLinks.classList.remove("active");
+    }
 
-    img.addEventListener("click", () => {
+});
 
-        popupImage.src = img.src;
+// ------------------------------
+// Scroll Progress Bar
+// ------------------------------
 
-        rakhiID.value = img.dataset.id;
-        rakhiName.value = img.dataset.name;
-        rakhiPrice.value = img.dataset.price;
+const progressBar = document.getElementById("progressBar");
 
-        popupName.textContent = img.dataset.name;
-        popupPrice.textContent = img.dataset.price;
+window.addEventListener("scroll", () => {
 
-        quantityInput.value = 1;
+    const scrollTop =
+        document.documentElement.scrollTop;
 
-        imagePopup.style.display = "flex";
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress =
+        (scrollTop / scrollHeight) * 100;
+
+    progressBar.style.width = progress + "%";
+
+});
+
+// ------------------------------
+// Back To Top Button
+// ------------------------------
+
+const topBtn = document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 400) {
+
+        topBtn.style.display = "block";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+
+        top: 0,
+        behavior: "smooth"
 
     });
 
 });
 
-// ==========================================
-// CLOSE IMAGE POPUP
-// ==========================================
-
-closeImage.addEventListener("click", () => {
-
-    imagePopup.style.display = "none";
-
-});
-
-imagePopup.addEventListener("click", (e) => {
-
-    if (e.target === imagePopup) {
-
-        imagePopup.style.display = "none";
-
-    }
-
-});
-
-// ==========================================
-// OPEN ORDER FORM
-// ==========================================
-
-popupOrderBtn.addEventListener("click", () => {
-
-    imagePopup.style.display = "none";
-
-    popup.style.display = "flex";
-
-});
-
-// ==========================================
-// CLOSE ORDER POPUP
-// ==========================================
-
-closeBtn.addEventListener("click", () => {
-
-    popup.style.display = "none";
-
-});
-
-window.addEventListener("click", (e) => {
-
-    if (e.target === popup) {
-
-        popup.style.display = "none";
-
-    }
-
-});
-
-// ==========================================
-// WHATSAPP ORDER
-// ==========================================
-
-orderForm.addEventListener("submit", function (e) {
-
-    e.preventDefault();
-
-    const name = document.getElementById("customerName").value.trim();
-
-    const phone = document.getElementById("phone").value.trim();
-
-    const address = document.getElementById("address").value.trim();
-
-    const quantity = document.getElementById("quantity").value;
-
-    if (name === "" || phone === "" || address === "") {
-
-        alert("Please fill all the details.");
-
-        return;
-
-    }
-
-    const ownerNumber = "916203143986";
-
-    const message =
-`🌸 New Rakhi Order 🌸
-
-👤 Name : ${name}
-
-📞 Mobile : ${phone}
-
-🏠 Address :
-${address}
-
-🎁 Product : ${rakhiName.value} (${rakhiID.value})
-
-📦 Quantity : ${quantity}
-
-Please confirm my order. Thank you.`;
-
-    const whatsappURL =
-`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`;
-
-    window.open(whatsappURL, "_blank");
-
-    orderForm.reset();
-
-    popup.style.display = "none";
-
-});
-
-// ==========================================
-// SMOOTH SCROLL
-// ==========================================
+// ------------------------------
+// Smooth Scroll
+// ------------------------------
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
@@ -160,7 +94,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
         e.preventDefault();
 
-        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        document.querySelector(
+            this.getAttribute("href")
+        ).scrollIntoView({
 
             behavior: "smooth"
 
@@ -170,66 +106,244 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 });
 
-// ==========================================
-// HERO ANIMATION
-// ==========================================
+// ------------------------------
+// Image Preview
+// ------------------------------
 
-window.addEventListener("load", () => {
+const imagePopup =
+    document.getElementById("imagePopup");
 
-    document.querySelector(".hero-content").style.opacity = "1";
+const popupImage =
+    document.getElementById("popupImage");
+
+const closeImage =
+    document.querySelector(".close-image");
+
+document.querySelectorAll(".product-img")
+.forEach(img => {
+
+    img.addEventListener("click", () => {
+
+        popupImage.src = img.src;
+
+        imagePopup.style.display = "flex";
+
+    });
 
 });
 
-// ==========================================
-// CARD ANIMATION
-// ==========================================
+closeImage.onclick = () => {
 
-const cards = document.querySelectorAll(".card");
+    imagePopup.style.display = "none";
 
-const observer = new IntersectionObserver(entries => {
+};
 
-    entries.forEach(entry => {
+imagePopup.onclick = (e) => {
 
-        if (entry.isIntersecting) {
+    if (e.target === imagePopup) {
 
-            entry.target.style.opacity = "1";
+        imagePopup.style.display = "none";
 
-            entry.target.style.transform = "translateY(0)";
+    }
+
+};
+
+// ------------------------------
+// Order Popup
+// ------------------------------
+
+const popup =
+    document.getElementById("popup");
+
+const closePopup =
+    document.querySelector(".close");
+
+const productID =
+    document.getElementById("productID");
+
+document.querySelectorAll(".order-btn")
+.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        popup.style.display = "flex";
+
+        productID.value =
+            button.dataset.id;
+
+    });
+
+});
+
+closePopup.onclick = () => {
+
+    popup.style.display = "none";
+
+};
+
+window.onclick = (e) => {
+
+    if (e.target === popup) {
+
+        popup.style.display = "none";
+
+    }
+
+};
+
+// ------------------------------
+// WhatsApp Order
+// ------------------------------
+
+const orderForm =
+    document.getElementById("orderForm");
+
+orderForm.addEventListener("submit", function (e) {
+
+    e.preventDefault();
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const phone =
+        document.getElementById("phone").value;
+
+    const address =
+        document.getElementById("address").value;
+
+    const quantity =
+        document.getElementById("quantity").value;
+
+    const code =
+        productID.value;
+
+    const message =
+`Hey, I want to place an order!
+
+Product Code : ${code}
+
+Name : ${name}
+
+Phone : ${phone}
+
+Quantity : ${quantity}
+
+Address :
+${address}`;
+
+    const whatsappNumber = "916203143986";
+
+    const url =
+`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(url, "_blank");
+
+    popup.style.display = "none";
+
+    orderForm.reset();
+
+});
+
+
+
+// ------------------------------
+// Quantity Selector
+// ------------------------------
+
+const plusBtn =
+    document.getElementById("plusBtn");
+
+const minusBtn =
+    document.getElementById("minusBtn");
+
+const quantityInput =
+    document.getElementById("quantity");
+
+if (plusBtn && minusBtn && quantityInput) {
+
+    plusBtn.addEventListener("click", () => {
+
+        quantityInput.value =
+            parseInt(quantityInput.value) + 1;
+
+    });
+
+    minusBtn.addEventListener("click", () => {
+
+        if (parseInt(quantityInput.value) > 1) {
+
+            quantityInput.value =
+                parseInt(quantityInput.value) - 1;
 
         }
 
     });
 
-}, {
+}
 
-    threshold: 0.2
+
+
+// ------------------------------
+// Active Menu
+// ------------------------------
+
+const sections =
+    document.querySelectorAll("section");
+
+const navItems =
+    document.querySelectorAll("#navLinks a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach(section => {
+
+        const top =
+            section.offsetTop - 120;
+
+        if (pageYOffset >= top) {
+
+            current =
+                section.getAttribute("id");
+
+        }
+
+    });
+
+    navItems.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+
+            link.classList.add("active");
+
+        }
+
+    });
 
 });
 
-cards.forEach(card => {
+// ------------------------------
+// Header Shadow
+// ------------------------------
 
-    card.style.opacity = "0";
+const header =
+    document.getElementById("header");
 
-    card.style.transform = "translateY(40px)";
+window.addEventListener("scroll", () => {
 
-    card.style.transition = ".7s";
+    if (window.scrollY > 40) {
 
-    observer.observe(card);
+        header.style.boxShadow =
+            "0 8px 25px rgba(0,0,0,.12)";
 
-});
+    } else {
 
-// ==========================================
-// MOBILE MENU
-// ==========================================
+        header.style.boxShadow =
+            "0 5px 18px rgba(0,0,0,.08)";
 
-const menuToggle = document.getElementById("menuToggle");
-
-const navLinks = document.getElementById("navLinks");
-
-menuToggle.addEventListener("click", () => {
-
-    navLinks.classList.toggle("active");
+    }
 
 });
-
-

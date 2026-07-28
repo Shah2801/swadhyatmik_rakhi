@@ -2,15 +2,20 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SWADHYATMIK Rakhi</title>
 
+    <title>SWADHYATMIK | Rakhi Collection</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Font Awesome -->
@@ -21,33 +26,15 @@
 
 <body>
 
-    <!-- ================= TOP BAR ================= -->
+    <!-- Scroll Progress -->
+    <div id="progressBar"></div>
 
-    <div class="top-bar">
-
-        <div class="top-content">
-
-            <div>
-                <i class="fa-solid fa-phone"></i>
-                +91 6203143986
-            </div>
-
-            <div>
-                <i class="fa-solid fa-truck-fast"></i>
-                Secure Packaging
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="top-bar" id="top"></div>
     <!-- ================= HEADER ================= -->
 
-    <header>
-
-        <div class="logo">
-
-            <img src="images/lotus-logo.webp" alt="Lotus Logo">
+    <header id="header">
+       <div class="logo">
+        <img src="images/lotus-logo.webp" alt="Lotus Logo">
 
             <div>
 
@@ -57,25 +44,34 @@
 
             </div>
 
-        </div>
+            </div>
+        <nav>
 
-    <nav class="navbar">
-         <div class="menu-toggle" id="menuToggle">
-        <i class="fa-solid fa-bars"></i>
-        </div>
+            <ul id="navLinks">
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#collection">Collection</a></li>
-        <li><a href="#footer">Contact</a></li>
-    </ul>
+                <li>
+                    <a href="#top"">Home</a>
+                </li>
 
-    
-    </nav>
+                <li>
+                    <a href="#collection">Collection</a>
+                </li>
+
+                <li>
+                    <a href="#footer">Contact</a>
+                </li>
+
+            </ul>
+
+            <div id="menuToggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </nav>
 
     </header>
 
-    <!-- ================= HERO ================= -->
+<!-- ================= HERO ================= -->
 
     <section class="hero">
 
@@ -95,7 +91,7 @@
 
                 <br>
 
-                Rakhi Collection
+                RAKHI COLLECTION
 
             </h1>
 
@@ -116,48 +112,82 @@
 
     </section>
 
+
+    <section class="impact-banner">
+
+    <div class="impact-box">
+
+        🌱 <strong>50% of our profits</strong>
+        are dedicated to the <strong>Swadhyatmik Foundation</strong>,
+        supporting quality education for underprivileged children.
+
+    </div>
+
+</section>
+
+
     <!-- ================= FEATURES ================= -->
 
     <section class="features">
 
-        <div class="feature">
+        <div class="feature-card">
 
-            <i class="fa-solid fa-gift"></i>
-
-            <h3>Unique Designs</h3>
-
-            <p>Beautiful handcrafted style rakhis for every relation.</p>
-
-        </div>
-
-        <div class="feature">
-
-            <i class="fa-solid fa-medal"></i>
+            <div class="feature-icon">
+                <i class="fa-solid fa-gem"></i>
+            </div>
 
             <h3>Premium Quality</h3>
 
-            <p>Made using high quality decorative materials.</p>
+            <p>
+
+                Crafted using premium materials
+                for elegant and long-lasting
+                designer rakhis.
+
+            </p>
 
         </div>
 
-        <div class="feature">
+        <div class="feature-card">
 
-    <i class="fa-solid fa-box"></i>
+            <div class="feature-icon">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
 
-    <h3>Secure Packaging</h3>
+            <h3>Secure Packaging</h3>
 
-    <p>Your Rakhi is packed with care to ensure it reaches safely and beautifully.</p>
+            <p>
 
-</div>
+                Every rakhi is packed carefully
+                to ensure safe and secure delivery.
+
+            </p>
+
+        </div>
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                <i class="fa-solid fa-star"></i>
+            </div>
+
+            <h3>Unique Designs</h3>
+
+            <p>
+
+                Beautiful exclusive collections
+                blending tradition with modern
+                elegance.
+
+            </p>
+
+        </div>
 
     </section>
 
-    <!-- ================= PRODUCTS ================= -->
+    <!-- ================= COLLECTION ================= -->
 
-    
-
-
-<section class="products" id="collection">
+    <section class="products" id="collection">
 
     <h2>Our Rakhi Collection</h2>
 
@@ -165,168 +195,293 @@
         Choose your favourite Rakhi to view it in full size and place your order.
     </p>
 
-    <div class="product-grid">
+        
 
-        <!-- Rakhi 1 -->
-        <div class="card">
-          <div class="badge">Best Seller</div>
-            <img
-                src="images/rakhi3.jpg"
-                class="product-img"
-                data-id="RK001"
-                alt="Rakhi">
+        <div class="product-grid">
+
+            <!-- Product 1 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi1.jpg"
+                     class="product-img"
+                     data-id="SWR001"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR001">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 2 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi2.jpg"
+                     class="product-img"
+                     data-id="SWR002"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR002">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 3 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi3.jpg"
+                     class="product-img"
+                     data-id="SWR003"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR003">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 4 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi4.jpg"
+                     class="product-img"
+                     data-id="SWR004"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR004">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 5 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi5.jpg"
+                     class="product-img"
+                     data-id="SWR005"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR005">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 6 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi6.jpg"
+                     class="product-img"
+                     data-id="SWR006"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR006">
+
+                    Order Now
+
+                </button>
+
+            </div>
+         
+
+          <!-- Product 7 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi7.jpg"
+                     class="product-img"
+                     data-id="SWR007"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR007">
+
+                    Order Now
+
+                </button>
+
+            </div>
+            
+
+
+            <!-- Product 8 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi8.jpg"
+                     class="product-img"
+                     data-id="SWR008"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR008">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 9-->
+
+            <div class="product-card">
+
+                <img src="images/rakhi9.jpg"
+                     class="product-img"
+                     data-id="SWR009"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR009">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
+            <!-- Product 10 -->
+
+            <div class="product-card">
+
+                <img src="images/rakhi10.jpg"
+                     class="product-img"
+                     data-id="SWR010"
+                     alt="Rakhi">
+
+                <button class="order-btn"
+                        data-id="SWR010">
+
+                    Order Now
+
+                </button>
+
+            </div>
+
 
         </div>
 
-        <!-- Rakhi 2 -->
-        <div class="card">
+    </section>
 
-            <img
-                src="images/rakhi2.jpg"
-                class="product-img"
-                data-id="RK002"
-                alt="Rakhi">
+        <!-- ================= IMAGE PREVIEW POPUP ================= -->
 
-        </div>
+    <div class="image-popup" id="imagePopup">
 
-        <!-- Rakhi 3 -->
-        <div class="card">
+        <span class="close-image">&times;</span>
 
-            <img
-                src="images/rakhi1.jpg"
-                class="product-img"
-                data-id="RK003"
-                alt="Rakhi">
-
-        </div>
-
-
-        <!-- Rakhi 4 -->
-        <div class="card">
-          
-            <img
-                src="images/rakhi4.jpg"
-                class="product-img"
-                data-id="RK001"
-                alt="Rakhi">
-
-        </div>
-
-        <!-- Rakhi 5 -->
-        <div class="card">
-
-            <img
-                src="images/rakhi6.jpg"
-                class="product-img"
-                data-id="RK002"
-                alt="Rakhi">
-
-        </div>
-
-        <!-- Rakhi 6 -->
-        <div class="card">
-
-            <img
-                src="images/rakhi8.jpg"
-                class="product-img"
-                data-id="RK003"
-                alt="Rakhi">
-
-        </div>
-
-
-        <!-- Rakhi 7 -->
-        <div class="card">
-          
-            <img
-                src="images/rakhi5.jpg"
-                class="product-img"
-                data-id="RK001"
-                alt="Rakhi">
-
-        </div>
-
-        <!-- Rakhi 8 -->
-        <div class="card">
-
-            <img
-                src="images/rakhi7.jpg"
-                class="product-img"
-                data-id="RK002"
-                alt="Rakhi">
-
-        </div>
+        <img src="" id="popupImage" alt="Preview">
 
     </div>
 
-</section>
+<!-- ================= ORDER POPUP ================= -->
 
 
+<div class="popup" id="popup">
 
-    <!-- ================= ORDER POPUP ================= -->
+    <div class="popup-content">
 
-    <div class="popup" id="popup">
+        <span class="close">&times;</span>
 
-        <div class="popup-box">
+        <h2>Place Your Order</h2>
 
-            <span class="close">&times;</span>
+        <p class="popup-text">
+            Complete your details and order instantly via WhatsApp.
+        </p>
 
-            <h2>Place Your Order</h2>
+        <div class="product-tag">
+            <i class="fa-solid fa-gift"></i>
+            Selected Rakhi
+        </div>
 
-            <form id="orderForm">
+        <form id="orderForm">
 
+            <input type="hidden" id="productID">
+
+            <div class="input-box">
                 <input
                     type="text"
                     id="customerName"
                     placeholder="Your Name"
                     required>
+            </div>
 
+            <div class="input-box">
                 <input
                     type="tel"
                     id="phone"
-                    placeholder="Mobile Number"
+                    placeholder="Phone Number"
                     required>
+            </div>
 
+            <div class="input-box">
                 <textarea
                     id="address"
                     placeholder="Delivery Address"
                     required></textarea>
+            </div>
 
-                <input
-                    type="hidden"
-                    id="rakhiID">
-                <input
-                    type="number"
-                    id="quantity"
-                    min="1"
-                    value="1">
-                
+            <div class="quantity-wrapper">
 
-                <button type="submit">
+    <label>Quantity</label>
 
-                    Order on WhatsApp
+    <div class="quantity-box">
 
-                </button>
+        <button type="button" id="minusBtn">−</button>
 
-            </form>
+        <input
+            type="text"
+            id="quantity"
+            value="1"
+            readonly>
 
-        </div>
+        <button type="button" id="plusBtn">+</button>
 
     </div>
 
-    <!-- Floating WhatsApp -->
+</div>
 
-    <a href="https://wa.me/916203143986"
+            <button type="submit" class="submit-btn">
+                <i class="fab fa-whatsapp"></i>
+                WhatsApp Order
+            </button>
 
-        class="whatsapp"
+        </form>
 
-        target="_blank">
+    </div>
 
-        <i class="fab fa-whatsapp"></i>
+</div>
 
-    </a>
 
-    <!-- ================= FOOTER ================= -->
+
+
+
+    
+
+ <!-- ================= FOOTER ================= -->
 
     <footer id="footer">
 
@@ -334,61 +489,65 @@
 
         <h2>SWADHYATMIK Rakhi</h2>
 
+        
+
+
+        <div class="contact-info">    
+            <p>
+                 <i class="fa-solid fa-phone"></i>
+                         +91 62031439866    
+                        
+            </p>    
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                       Ranchi, Jharkhand
+                        </p>
+                    </div>
+
         <p>
 
-            <i class="fa-solid fa-phone"></i>
-
-            +91 6203143986
+            Celebrate every bond with elegance, love and tradition.
 
         </p>
+        
+        <p class="copyright">
 
-        <p>
+                © 2026 SWADHYATMIK. All Rights Reserved.
 
-            <i class="fa-solid fa-location-dot"></i>
-
-            Ranchi, Jharkhand
-
-        </p>
-
-        <p>
-
-            Made with ❤️ for Raksha Bandhan
-
-        </p>
+            </p>
 
     </footer>
 
+
+
+
+
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button id="topBtn">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+
+    <a
+        href="https://wa.me/916203143986"
+        class="floating-whatsapp"
+        target="_blank">
+
+        <i class="fab fa-whatsapp"></i>
+
+    </a>
+
+
+    <!-- ================= SCRIPT ================= -->
+
     <script src="script.js"></script>
-
-
-
-<!-- Image Viewer -->
-
-<div class="image-popup" id="imagePopup">
-
-    <div class="image-box">
-
-        <span class="close-image">&times;</span>
-
-        <img
-            id="popupImage">
-
-        <button
-            id="popupOrderBtn"
-            class="hero-btn">
-
-            Order This Rakhi
-
-        </button>
-
-    </div>
-
-</div>  
-
 
 </body>
 
 </html>
-
-
-
