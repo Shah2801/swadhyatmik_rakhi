@@ -228,8 +228,7 @@ Phone : ${phone}
 
 Quantity : ${quantity}
 
-Address :
-${address}`;
+Address : ${address}`;
 
     const whatsappNumber = "916203143986";
 
